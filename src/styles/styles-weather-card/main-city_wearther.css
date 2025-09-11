@@ -1,0 +1,12 @@
+.main-city__weather_section {
+  width: 800px;
+  height: 570px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-city__weather_card .weather_card {
+  width: 500px;
+  height: 500px;
+}

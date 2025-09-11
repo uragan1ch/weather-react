@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #ddd8ea;
+  background: linear-gradient(#dff6fe 35%, #cfe2fd 65%);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto", Flex;
+  width: 100%;
+  max-width: 380px;
+  min-width: 320px;
+  margin: 0 auto;
+}
+
+.header {
+  font-weight: 600;
+  font-size: 42px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  margin: 0px 0px 30px 0px;
+  color: #303345;
+}
+
+.input_wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.input {
+  width: 100%;
+  height: 50px;
+  border-radius: 25px;
+  padding: 0 18px;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+
+  /* Liquid Glass фон */
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  /* Тонкие тени для глубины */
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1),
+    inset 0 1px rgba(255, 255, 255, 0.2);
+
+  color: #000000;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+  max-width: 320px;
+}
+
+.input:-webkit-autofill,
+.input:-webkit-autofill:hover,
+.input:-webkit-autofill:focus,
+.input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 50px rgba(255, 255, 255, 0.08) inset,
+    /* фон */ 0 4px 24px rgba(0, 0, 0, 0.1),
+    /* внешняя тень */ inset 0 1px rgba(255, 255, 255, 0.2) !important; /* внутренняя тень */
+
+  -webkit-text-fill-color: #000000 !important;
+
+  /* Blur сохраняем */
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: background-color 9999s ease-in-out 0s !important;
+}
+
+/* Блик сверху */
+.input::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 1px;
+  right: 1px;
+  height: 50%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), transparent);
+  border-radius: 25px 25px 12px 12px;
+  pointer-events: none;
+}
+
+/* Тонкая линия сверху */
+.input::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+  border-radius: 25px 25px 0 0;
+  pointer-events: none;
+}
+
+/* Hover */
+.input:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.3);
+}
+
+/* Focus */
+.input:focus {
+  outline: none;
+  border-color: rgba(147, 247, 247, 0.6);
+  box-shadow: 0 6px 32px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.35);
+  border-width: 2px;
+}
+
+.input_label {
+  position: absolute;
+  top: -8px;
+  left: 25px;
+  padding: 0 4px;
+  font-size: 14px;
+  color: #555;
+  background: none;
+  line-height: 1;
+  z-index: 2;
+}
+
+.input_label::before {
+  content: "";
+  position: absolute;
+  top: 61%;
+  left: -1px;
+  width: calc(100%);
+  height: 3px;
+  background-color: transparent;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+.form_button {
+  width: 100%;
+  height: 50px;
+  opacity: 1;
+  gap: 10px;
+  border-radius: 25px;
+  padding: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Liquid Glass Effect как на изображении */
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  /* Тонкие тени для глубины */
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
+
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.form_button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+  border-radius: 25px 25px 0 0;
+}
+
+.form_button::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  right: 1px;
+  height: 50%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent);
+  border-radius: 24px 24px 12px 12px;
+  pointer-events: none;
+}
+
+/* Hover эффект - более яркий и четкий */
+.form_button:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Active эффект */
+.form_button:active {
+  transform: translateY(0);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
+}
