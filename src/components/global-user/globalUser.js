@@ -3,13 +3,18 @@ import { getUser, putUser } from "../../utils/request";
 
 export const useUserStore = create((set, get) => ({
   user: null,
+  loading: false,
+  error: null,
+
   fetchUser: async () => {
     set({ loading: true, error: null });
     try {
       const response = await getUser();
       const user = response.data.user;
       set({
-        user: user,
+        user,
+        loading: false,
+        error: null,
       });
     } catch (err) {
       set({
@@ -21,8 +26,25 @@ export const useUserStore = create((set, get) => ({
 
   updateDisplayName: async (name) => {
     const { user } = get();
-    const newUser = { ...user, displayName: name };
+
+    if (!user) return; // защита на случай, если пользователь ещё не загружен
+
+    // Создаем копию объекта пользователя, не теряя его favoriteCities и mainCity
+    const newUser = {
+      ...user,
+      displayName: name,
+    };
+
+    // Обновляем Zustand
     set({ user: newUser });
-    await putUser({ newUser });
+
+    // ВАЖНО: передаём на сервер ВЕСЬ объект пользователя
+    try {
+      await putUser(newUser);
+    } catch (err) {
+      console.error("Ошибка при обновлении ника:", err);
+      // Если сервер вернул ошибку — возвращаем старого пользователя
+      set({ user });
+    }
   },
 }));

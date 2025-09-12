@@ -5,20 +5,29 @@ import { Formik_Input } from "../../../components/inputs/formik-input";
 import { ValidationSchema } from "../../../utils/validators/formik_validation";
 import { InitialValues } from "../../../utils/initial/formik_initial_values";
 import { useState } from "react";
+import { useUserStore } from "../../../components/global-user/globalUser";
 
 export function SignUp() {
   const navigate = useNavigate();
+  const { fetchUser } = useUserStore();
 
   const validationSchema = ValidationSchema();
   const initialValues = InitialValues();
 
   const goToMain = async (values) => {
+    console.log("Submitting form with values:", values);
     try {
-      await reg({
+      const response = await reg({
         email: values.email,
         password: values.password,
         displayName: values.displayName,
       });
+
+      localStorage.setItem("accessToken", response.data.accessToken);
+      localStorage.setItem("refreshToken", response.data.refreshToken);
+
+      await fetchUser();
+      navigate("/home");
     } catch (err) {
       console.error(err);
       alert(
@@ -56,7 +65,11 @@ export function SignUp() {
           <button className="form_button input_wrapper" type="submit">
             Зарегистрироваться
           </button>
-          <button className="form_button input_wrapper" onClick={goToSignIn}>
+          <button
+            type="button"
+            className="form_button input_wrapper"
+            onClick={goToSignIn}
+          >
             Уже есть аккаунт
           </button>
         </Form>

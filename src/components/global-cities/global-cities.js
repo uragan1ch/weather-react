@@ -1,13 +1,24 @@
 import { create } from "zustand";
-import { getUser, putUser } from "../../utils/request";
+import { putUser } from "../../utils/request";
 import { useUserStore } from "../global-user/globalUser";
 
 export const useCityStore = create((set, get) => ({
   favoriteCities: [],
   mainCity: "",
+  error: null,
 
   setCities: (favoriteCities, mainCity) => {
     set({ favoriteCities, mainCity });
+  },
+
+  initFromUser: () => {
+    const { user } = useUserStore.getState();
+    if (user) {
+      set({
+        favoriteCities: user.favoriteCities || [],
+        mainCity: user.mainCity || "",
+      });
+    }
   },
 
   addMainCity: async (city) => {
@@ -41,7 +52,7 @@ export const useCityStore = create((set, get) => ({
     const newCities = [...favoriteCities, city];
     set({ favoriteCities: newCities });
     get().updateCitiesInDB(newCities);
-    console.log(newCities);
+    console.log("Добавлен город:", newCities);
   },
 
   removeCityFromFavorites: async (cityToRemove) => {
