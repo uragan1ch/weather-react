@@ -39,17 +39,16 @@ export const CityWeather = ({ city, onRemoveClick, detailed = false }) => {
       </div>
 
       <h1>
-        Погода в городе <br></br> {weather.location.name},
-        {weather.location.country}
+        Weather in <br></br> {weather.location.name}
       </h1>
-      <p>Температура: {weather.current.temp_c}°C</p>
-      <p>Состояние: {weather.current.condition.text}</p>
+      <p>Temperature : {weather.current.temp_c}°C</p>
+      <p>Сondition: {weather.current.condition.text}</p>
       {detailed && (
         <>
-          <p>Ощущается как: {weather.current.feelslike_c}°C</p>
-          <p>Влажность: {weather.current.humidity}%</p>
-          <p>Ветер: {weather.current.wind_kph} км/ч</p>
-          <p>Давление: {weather.current.pressure_mb} мбар</p>
+          <p>Feels like: {weather.current.feelslike_c}°C</p>
+          <p>Humidity: {weather.current.humidity}%</p>
+          <p>Wind: {weather.current.wind_kph} kph</p>
+          <p>Pressure: {weather.current.pressure_mb} mb</p>
         </>
       )}
       <img src={weather.current.condition.icon} alt="icon" />

@@ -15,9 +15,9 @@ export const Profile = () => {
 
   return (
     <div className="profile">
-      Твой никнейм:<br></br> {user?.displayName}
+      Your nickname:<br></br> {user?.displayName}
       <button className="header_buttons" onClick={goToChangeProfile}>
-        Сменить никнейм
+        Change nickname
       </button>
     </div>
   );

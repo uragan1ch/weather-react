@@ -13,10 +13,7 @@ export const FavCities = () => {
   console.log(favoriteCities);
   return (
     <div className="fav-cities">
-      <CityInput
-        text="Добавить город в избранные"
-        onClick={addCityToFavorites}
-      />
+      <CityInput text="Add city to favorites" onClick={addCityToFavorites} />
       <div className="cards-container">
         {favoriteCities.map((city) => (
           <CityWeather

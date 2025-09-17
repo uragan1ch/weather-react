@@ -13,9 +13,9 @@ export function Home() {
         <Profile />
       </div>
 
-      <h1>Добро пожаловать на главную страницу!</h1>
-      <p>Здесь вы можете увидеть погоду в вашем городе.</p>
-      <p>Выберите город для получения прогноза погоды.</p>
+      <h1>Welcome to the main page!</h1>
+      <p>Here you can see the weather in your city</p>
+      <p>Select a city to get the weather forecast</p>
       <div className="cities_section">
         <MainCity />
         <FavCities />

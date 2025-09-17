@@ -10,7 +10,7 @@ export const MainCity = () => {
   return (
     <div className="main-city">
       <div className="main-city__input">
-        <CityInput text="Сделать город как основной" onClick={addMainCity} />
+        <CityInput text="Make the city the main" onClick={addMainCity} />
       </div>
       <div className="main-city__weather_section">
         {mainCity && (

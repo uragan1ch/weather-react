@@ -34,17 +34,17 @@ export const ChangeProfile = () => {
       onSubmit={onSubmit}
     >
       <Form>
-        <Formik_Input name="username" label="Никнейм" type="text" />
+        <Formik_Input name="username" label="Nickname" type="text" />
         <div className="change_profile__buttons">
           <button className="change_profile__button" type="submit">
-            Сохранить
+            Save
           </button>
           <button
             className="change_profile__button"
             type="button"
             onClick={goToHome}
           >
-            Вернуться назад
+            Go back
           </button>
         </div>
       </Form>

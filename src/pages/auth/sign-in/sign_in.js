@@ -58,7 +58,7 @@ export function SignIn() {
 
           {error && (
             <div style={{ color: "red" }}>
-              Ошибка при входе, вероятно, неверный email или пароль
+              Login error, probably incorrect email or password
             </div>
           )}
 
@@ -67,14 +67,14 @@ export function SignIn() {
             type="submit"
             disabled={isSubmitting}
           >
-            {isSubmitting ? "Выполняется вход..." : "Войти"}
+            {isSubmitting ? "Signing in..." : "Login"}
           </button>
           <button
             className="form_button input_wrapper"
             type="button"
             onClick={goToRegister}
           >
-            У меня нет аккаунта
+            I don't have an account
           </button>
         </Form>
       )}

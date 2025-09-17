@@ -26,7 +26,7 @@ export const useCityStore = create((set, get) => ({
       await putUser({ mainCity: city });
       set({ mainCity: city });
     } catch (err) {
-      set({ error: "Ошибка при добавлении города: " + err.message });
+      set({ error: "Error adding a city: " + err.message });
     }
   },
 
@@ -35,7 +35,7 @@ export const useCityStore = create((set, get) => ({
       await putUser({ mainCity: "" });
       set({ mainCity: "" });
     } catch (err) {
-      set({ error: "Ошибка при удалении города: " + err.message });
+      set({ error: "Error deleting city: " + err.message });
     }
   },
 
@@ -43,7 +43,7 @@ export const useCityStore = create((set, get) => ({
     try {
       await putUser({ favoriteCities: cities });
     } catch (err) {
-      console.log("Ошибка при обновлении городов: " + err.message);
+      console.log("Error updating cities: " + err.message);
     }
   },
 
@@ -52,7 +52,7 @@ export const useCityStore = create((set, get) => ({
     const newCities = [...favoriteCities, city];
     set({ favoriteCities: newCities });
     get().updateCitiesInDB(newCities);
-    console.log("Добавлен город:", newCities);
+    console.log("Added city:", newCities);
   },
 
   removeCityFromFavorites: async (cityToRemove) => {

@@ -11,7 +11,7 @@ export function Header() {
 
   return (
     <button className="header_buttons" onClick={goToSignIn}>
-      Выйти
+      Exit
     </button>
   );
 }

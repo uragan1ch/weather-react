@@ -37,7 +37,7 @@ export function SignUp() {
 
   return (
     <div>
-      <h2 className="header">Страница регистрации</h2>
+      <h2 className="header">Registration page</h2>
 
       <Formik
         initialValues={initialValues}
@@ -49,30 +49,26 @@ export function SignUp() {
             <Formik_Input
               name="displayName"
               type="text"
-              placeholder="Введите имя"
+              placeholder="Enter name"
             />
 
-            <Formik_Input
-              name="email"
-              type="text"
-              placeholder="Введите почту"
-            />
+            <Formik_Input name="email" type="text" placeholder="Enter email" />
 
             <Formik_Input
               name="password"
               type="password"
-              placeholder="Придумайте пароль"
+              placeholder="Create a password"
             />
 
             <button className="form_button input_wrapper" type="submit">
-              Зарегистрироваться
+              Register
             </button>
             <button
               type="button"
               className="form_button input_wrapper"
               onClick={goToSignIn}
             >
-              Уже есть аккаунт
+              I have an account
             </button>
           </Form>
         )}
