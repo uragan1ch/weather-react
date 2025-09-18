@@ -49,14 +49,12 @@ body {
   font-size: 16px;
   font-family: "Roboto", sans-serif;
 
-  /* Liquid Glass фон */
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(40px);
   -webkit-backdrop-filter: blur(40px);
 
   border: 1px solid rgba(255, 255, 255, 0.15);
 
-  /* Тонкие тени для глубины */
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1),
     inset 0 1px rgba(255, 255, 255, 0.2);
 
@@ -64,6 +62,7 @@ body {
   position: relative;
   z-index: 1;
   transition: all 0.3s ease;
+  margin-bottom: 10px;
 }
 
 .input:-webkit-autofill,
@@ -71,12 +70,8 @@ body {
 .input:-webkit-autofill:focus,
 .input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 50px rgba(255, 255, 255, 0.08) inset,
-    /* фон */ 0 4px 24px rgba(0, 0, 0, 0.1),
-    /* внешняя тень */ inset 0 1px rgba(255, 255, 255, 0.2) !important; /* внутренняя тень */
+    0 4px 24px rgba(0, 0, 0, 0.1), inset 0 1px rgba(255, 255, 255, 0.2) !important;
 
-  -webkit-text-fill-color: #000000 !important;
-
-  /* Blur сохраняем */
   backdrop-filter: blur(40px);
   -webkit-backdrop-filter: blur(40px);
 
@@ -84,7 +79,6 @@ body {
   transition: background-color 9999s ease-in-out 0s !important;
 }
 
-/* Блик сверху */
 .input::before {
   content: "";
   position: absolute;
@@ -97,7 +91,6 @@ body {
   pointer-events: none;
 }
 
-/* Тонкая линия сверху */
 .input::after {
   content: "";
   position: absolute;
@@ -115,7 +108,6 @@ body {
   pointer-events: none;
 }
 
-/* Hover */
 .input:hover {
   background: rgba(255, 255, 255, 0.12);
   border: 1px solid rgba(255, 255, 255, 0.25);
@@ -123,10 +115,8 @@ body {
     inset 0 1px 0 0 rgba(255, 255, 255, 0.3);
 }
 
-/* Focus */
 .input:focus {
   outline: none;
-  border-color: rgba(147, 247, 247, 0.6);
   box-shadow: 0 6px 32px rgba(0, 0, 0, 0.15),
     inset 0 1px 0 0 rgba(255, 255, 255, 0.35);
   border-width: 2px;
@@ -134,29 +124,19 @@ body {
 
 .input_label {
   position: absolute;
-  top: -8px;
+  top: -18px;
   left: 25px;
   padding: 0 4px;
   font-size: 14px;
   color: #555;
   background: none;
+
   line-height: 1;
   z-index: 2;
 }
 
-.input_label::before {
-  content: "";
-  position: absolute;
-  top: 61%;
-  left: -1px;
-  width: calc(100%);
-  height: 3px;
-  background-color: transparent;
-  transform: translateY(-50%);
-  z-index: -1;
-}
-
 .form_button {
+  font-size: 15px;
   width: 100%;
   height: 50px;
   opacity: 1;

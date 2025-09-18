@@ -13,13 +13,11 @@
   align-items: center;
   justify-content: center;
 
-  /* Liquid Glass Effect как на изображении */
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(40px);
   -webkit-backdrop-filter: blur(40px);
   border: 1px solid rgba(255, 255, 255, 0.15);
 
-  /* Тонкие тени для глубины */
   box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.1),
     inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
 
@@ -57,7 +55,6 @@
   pointer-events: none;
 }
 
-/* Hover эффект - более яркий и четкий */
 .header_buttons:hover {
   background: rgba(255, 255, 255, 0.12);
   border: 1px solid rgba(255, 255, 255, 0.25);
@@ -66,7 +63,6 @@
   transform: translateY(-1px);
 }
 
-/* Active эффект */
 .header_buttons:active {
   transform: translateY(0);
   background: rgba(255, 255, 255, 0.06);

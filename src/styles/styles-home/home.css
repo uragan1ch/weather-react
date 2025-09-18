@@ -1,31 +1,25 @@
-/* общий сброс */
 * {
   box-sizing: border-box;
 }
 
-/* фон на весь экран */
 body {
-  /* min-height: 100vh; 100% высоты экрана */
   background: linear-gradient(#dff6fe 35%, #cfe2fd 65%);
   background-attachment: fixed;
 }
 
-/* контейнер контента */
 .home_page {
-  width: min(1400px, 96%); /* будет 1400px на широких экранах, 96% — на узких */
+  width: min(1400px, 96%);
   max-width: 1400px;
   margin: 0 auto;
-  padding: 40px 24px; /* внутренние отступы (регулируйте) */
+  padding: 40px 24px;
 }
 
-/* если нужно — зафиксировать точно при очень больших разрешениях */
 @media (min-width: 1800px) {
   .home_page {
     width: 1400px;
   }
 }
 
-/* хедер внутри контейнера — чтобы элементы в шапке центрировались одинаково */
 .header_home {
   max-width: 1400px;
   margin: 0 auto;

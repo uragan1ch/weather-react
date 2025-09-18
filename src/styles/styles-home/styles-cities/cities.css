@@ -1,13 +1,10 @@
 .main-city {
-  /* display: flex; */
-
-  align-items: center; /* по вертикали выравнивание */
-  width: 100%; /* растянуть на всю ширину родителя */
+  align-items: center;
+  width: 100%;
   max-width: 100%;
 }
 
 .main-city__input {
-  /* flex: 0 0 250px; фиксированная ширина для инпута */
   justify-content: center;
   display: flex;
 }
@@ -21,7 +18,7 @@
 }
 
 .cities_section {
-  display: flex; /* Включаем flex-контейнер */
-  justify-content: space-between; /* Размещаем элементы по краям */
+  display: flex;
+  justify-content: space-between;
   width: 100%;
 }

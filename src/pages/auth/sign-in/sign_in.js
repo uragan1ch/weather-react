@@ -9,7 +9,7 @@ import("../../../styles/styles-auth/auth.css");
 const validationSchema = Yup.object({
   email: Yup.string().email("Неверный email").required("Обязательное поле"),
   password: Yup.string()
-    .min(6, "Минимум 6 символов")
+    .min(8, "Минимум 8 символов")
     .required("Обязательное поле"),
 });
 
@@ -51,7 +51,7 @@ export function SignIn() {
     >
       {({ isSubmitting }) => (
         <Form className="form">
-          <p className="header">SignIn</p>
+          <p className="header">Sign In</p>
           <Formik_Input name="email" label="Email" type="email" />
 
           <Formik_Input name="password" label="Password" type="password" />
@@ -74,7 +74,7 @@ export function SignIn() {
             type="button"
             onClick={goToRegister}
           >
-            I don't have an account
+            Create new account
           </button>
         </Form>
       )}

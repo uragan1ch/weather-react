@@ -26,7 +26,7 @@ export const CityInput = ({ text, onClick }) => {
         onSubmit={onSubmit}
       >
         <Form>
-          <Formik_Input name="city" label="City" placeholder="Enter city" />
+          <Formik_Input name="city" placeholder="Enter city" />
           <Button text={text} type="submit" />
         </Form>
       </Formik>
